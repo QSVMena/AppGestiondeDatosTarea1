@@ -6,7 +6,7 @@ import Modells.Employee;
 
 public class EmployeeController implements IGestion<Employee> {
 	
-	private List<Employee> listEmployee;
+	private ArrayList<Employee> listEmployee;
 	
 	public EmployeeController() {
 		listEmployee = new ArrayList();
@@ -18,7 +18,7 @@ public class EmployeeController implements IGestion<Employee> {
 	}
 
 	@Override
-	public List<Employee> GetList() {
+	public ArrayList<Employee> GetList() {
 		return listEmployee;
 	}
 

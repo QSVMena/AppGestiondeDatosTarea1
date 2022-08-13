@@ -6,7 +6,7 @@ import Modells.Miembro;
 
 public class MiembroController implements IGestion <Miembro> {
 	
-	private List<Miembro> listMiembro;
+	private ArrayList<Miembro> listMiembro;
 
 	public MiembroController () {
 		listMiembro = new ArrayList();
@@ -18,7 +18,7 @@ public class MiembroController implements IGestion <Miembro> {
 	}
 	
 	@Override
-	public List<Miembro> GetList() {	
+	public ArrayList<Miembro> GetList() {	
 		return listMiembro;
 	}
 }
