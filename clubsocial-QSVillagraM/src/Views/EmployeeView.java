@@ -1,7 +1,9 @@
 package Views;
 import java.text.ParseException;
+import Commons.DateOperation;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -42,6 +44,7 @@ public class EmployeeView implements IGestionViews<Employee> {
 			System.out.print("Fecha de ingreso del empleado\n>");
 			System.out.print(formato.format(fecha));
 			empleado.setFechaDeIngreso(formato.parse(formato.format(fecha)));
+			
 		}
 		catch (ParseException ex) {
 			System.out.print("Formato incorrecto");	
@@ -52,8 +55,13 @@ public class EmployeeView implements IGestionViews<Employee> {
 
 	@Override
 	public void PrintDatos(ArrayList<Employee> list) {
+		Calendar fechaNacimiento = Calendar.getInstance();
+		Calendar fechaActual = Calendar.getInstance();
+		
 		for (int n = 0; n <list.size(); n++) {
-			System.out.println(" "+list.get(n).FirstName+" "+formato.format(list.get(n).Birthdate)+" "+list.get(n).Genero+" "+list.get(n).Age+" "+list.get(n).EmployeeID+" "+formato.format(list.get(n).FechaDeIngreso));
+			fechaNacimiento.setTime(list.get(n).Birthdate);
+			 int Age = fechaActual.get(Calendar.YEAR)- fechaNacimiento.get(Calendar.YEAR);
+			System.out.println(" "+list.get(n).FirstName+" "+formato.format(list.get(n).Birthdate)+" "+list.get(n).Genero+" "+Age+" "+list.get(n).EmployeeID+" "+formato.format(list.get(n).FechaDeIngreso));
 		}
 		
 		

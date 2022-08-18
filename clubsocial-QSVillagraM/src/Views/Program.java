@@ -1,7 +1,10 @@
 package Views;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 import Controllers.EmployeeController;
@@ -23,7 +26,7 @@ public class Program {
 		MiembroViews miembro = new MiembroViews();
 		EmployeeController employeeController = new EmployeeController();
 		EmployeeView employee = new EmployeeView();
-
+		
 		do {
 			Opcion = 0;
 			System.out.print("================================================================\n");
@@ -117,7 +120,8 @@ public class Program {
 			}
 		} while (Opcion != 3);
 		System.out.print("Programa finalizado");
+		
 
 	}
-
+	
 }
